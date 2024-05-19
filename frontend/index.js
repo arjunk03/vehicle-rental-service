@@ -6,6 +6,8 @@ const dvListVeh = document.querySelector("#dv-list-veh")
 const dvAddVeh = document.querySelector("#dv-add-veh")
 const aVeh = document.querySelector("#a-vehicle")
 const aVehCateg = document.querySelector("#a-category")
+const aListVehCat = document.querySelector("#a-list-categ")
+const aAddVehCat = document.querySelector("#a-add-categ")
 // const aVeh = document.querySelector("#a-vehicle")
 // const aVehCateg = document.querySelector("#a-category")
 
@@ -31,7 +33,7 @@ aVeh.addEventListener("click", () => {
     dvVeh.style.display = "block";    
     dvVehCateg.style.display = "none" ;
     viewvehicleTab()
-    hideehicleCategTab()
+    hideVehicleCategTab()
     // dvListVeh.style.visibility = "hidden";
     // dvAddVeh.style.visibility = "visible";
 
@@ -73,9 +75,10 @@ function viewvehicleCategTab()
     dvListCateg.style.display = "none";
     dvAddCateg.style.display = "block";
 
+
 }
 
-function hideehicleCategTab()
+function hideVehicleCategTab()
 {
     // dvListCateg.style.visibility = "hidden";
     // dvAddCateg.style.visibility = "hidden";
@@ -84,3 +87,31 @@ function hideehicleCategTab()
     dvAddCateg.style.display = "none";
 
 }
+
+function viewAddvehicleCategTab()
+{
+    // dvListCateg.style.visibility = "hidden";
+    // dvAddCateg.style.visibility = "visible";
+    dvListCateg.style.display = "block";
+    dvAddCateg.style.display = "none";
+
+
+}
+
+aListVehCat.addEventListener("click", (evt) => {
+    
+    console.log(" div shows ss ")
+    evt.preventDefault()
+    viewAddvehicleCategTab()
+
+    const vehCatData = getVehCatgryDetals()
+    console.log("vehCatData : ", vehCatData)
+}); 
+
+
+// dvListCateg.addEventListener("show", (evt) => {
+    
+//     console.log(" div shows  show")
+//     evt.preventDefault()
+// }); 
+

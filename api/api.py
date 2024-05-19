@@ -2,8 +2,9 @@ from flask import Flask
 from flask import request
 from flask_restful import Resource, Api, reqparse
 from flask_cors import CORS, cross_origin
+from flask import Flask, jsonify
 
-from model import add_veh_category
+from model import add_veh_category, get_veh_category
 
 
 app = Flask(__name__)
@@ -18,12 +19,17 @@ parser = reqparse.RequestParser()
 
 class VehicleCategory(Resource):
     def get(self):
-        return {'hello': 'velicle catefgory'}
+        data = get_veh_category()
+        result = [item.obj_to_dict() for item in data]
+        return jsonify(result)  
+
 
     def post(self):
         data = request.json
 
         add_veh_category(data)
+
+        return {"msg": "Added data successfully"}
 
 
 

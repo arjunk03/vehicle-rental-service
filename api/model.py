@@ -3,6 +3,10 @@ from sqlalchemy import Table, Column, Integer, String, MetaData
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 
+Session = sessionmaker(bind = engine)
+session = Session()
+
+
 # meta = MetaData()
 
 # students = Table(
@@ -26,6 +30,16 @@ class VehicleCategory(Base):
     created = Column(String(255))
     modified = Column(String(255))
     user = Column(String(255))
+
+    def obj_to_dict(self):  # for build json format
+        return {
+            "categ_name": self.categ_name,
+            "description": self.description,
+            "table_id": self.table_id,
+            "created": self.created,
+            "modified": self.modified,
+            "user": self.user
+        }
     
     
 Base.metadata.create_all(engine)
@@ -33,8 +47,7 @@ Base.metadata.create_all(engine)
 
 
 def add_veh_category(data):    
-    Session = sessionmaker(bind = engine)
-    session = Session()
+    
 
     cat_data = VehicleCategory(
         categ_name = data["category"],
@@ -43,3 +56,9 @@ def add_veh_category(data):
 
     session.add(cat_data)
     session.commit()
+
+
+def get_veh_category():
+    result = session.query(VehicleCategory).all()
+
+    return result
