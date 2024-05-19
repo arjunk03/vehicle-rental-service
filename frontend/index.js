@@ -10,9 +10,13 @@ const aVehCateg = document.querySelector("#a-category")
 // const aVehCateg = document.querySelector("#a-category")
 
 
+
+
 window.addEventListener("load", () => {
-    dvVeh.style.visibility = "hidden";    
-    dvVehCateg.style.visibility = "visible" ;
+    // dvVeh.style.visibility = "hidden";    
+    // dvVehCateg.style.visibility = "visible" ;
+    dvVeh.style.display = "none";    
+    dvVehCateg.style.visibility = "block" ;
     viewvehicleCategTab()
     hidevehicleTab()
     // dvListCateg.style.visibility = "hidden";
@@ -22,8 +26,10 @@ window.addEventListener("load", () => {
 
 aVeh.addEventListener("click", () => {
     console.log("enter veh click")
-    dvVeh.style.visibility = "visible";    
-    dvVehCateg.style.visibility = "hidden" ;
+    // dvVeh.style.visibility = "visible";    
+    // dvVehCateg.style.visibility = "hidden" ;
+    dvVeh.style.display = "block";    
+    dvVehCateg.style.display = "none" ;
     viewvehicleTab()
     hideehicleCategTab()
     // dvListVeh.style.visibility = "hidden";
@@ -33,8 +39,10 @@ aVeh.addEventListener("click", () => {
 
 aVehCateg.addEventListener("click", () => {
     console.log("enter veh categ click")
-    dvVeh.style.visibility = "hidden";    
-    dvVehCateg.style.visibility = "visible" ;
+    // dvVeh.style.visibility = "hidden";    
+    // dvVehCateg.style.visibility = "visible" ;
+    dvVeh.style.display = "none";    
+    dvVehCateg.style.display = "block" ;
     viewvehicleCategTab()
     hidevehicleTab()
     // dvListCateg.style.visibility = "hidden";
@@ -44,26 +52,35 @@ aVehCateg.addEventListener("click", () => {
 
 function viewvehicleTab()
 {
-    dvListVeh.style.visibility = "hidden";
-    dvAddVeh.style.visibility = "visible";
+    // dvListVeh.style.visibility = "hidden";
+    // dvAddVeh.style.visibility = "visible";
+    dvListVeh.style.display = "none";
+    dvAddVeh.style.display = "block";
 }
 
 function hidevehicleTab()
 {
-    dvListVeh.style.visibility = "hidden";
-    dvAddVeh.style.visibility = "hidden";
+    // dvListVeh.style.visibility = "hidden";
+    // dvAddVeh.style.visibility = "hidden";
+    dvListVeh.style.display = "none";
+    dvAddVeh.style.display = "none";
 }
 
 function viewvehicleCategTab()
 {
-    dvListCateg.style.visibility = "hidden";
-    dvAddCateg.style.visibility = "visible";
+    // dvListCateg.style.visibility = "hidden";
+    // dvAddCateg.style.visibility = "visible";
+    dvListCateg.style.display = "none";
+    dvAddCateg.style.display = "block";
 
 }
 
 function hideehicleCategTab()
 {
-    dvListCateg.style.visibility = "hidden";
-    dvAddCateg.style.visibility = "hidden";
+    // dvListCateg.style.visibility = "hidden";
+    // dvAddCateg.style.visibility = "hidden";
+
+    dvListCateg.style.display = "none";
+    dvAddCateg.style.display = "none";
 
 }
