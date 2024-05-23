@@ -20,7 +20,8 @@ parser = reqparse.RequestParser()
 class VehicleCategory(Resource):
     def get(self):
         data = get_veh_category()
-        result = [item.obj_to_dict() for item in data]
+        result = {a:b for (a, b) in data }
+        print(result)
         return jsonify(result)  
 
 

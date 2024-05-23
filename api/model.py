@@ -35,10 +35,10 @@ class VehicleCategory(Base):
         return {
             "categ_name": self.categ_name,
             "description": self.description,
-            "table_id": self.table_id,
-            "created": self.created,
-            "modified": self.modified,
-            "user": self.user
+            # "table_id": self.table_id,
+            # "created": self.created,
+            # "modified": self.modified,
+            # "user": self.user
         }
     
     
@@ -59,6 +59,6 @@ def add_veh_category(data):
 
 
 def get_veh_category():
-    result = session.query(VehicleCategory).all()
-
+    result = session.query(VehicleCategory.categ_name.label("categ_name"), VehicleCategory.description.label("description")).all()
+    print("result :", result)
     return result

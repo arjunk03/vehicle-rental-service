@@ -26,27 +26,35 @@ const clearVehCategoryFields = () => {
 
 const getVehCatgryDetals = () => {
     const data =  getVehCatgryDetalsService().then(data => {
-        console.log("inside prms :", data)
+        // console.log("inside prms :", data)
         return data
     })
 
     data.then(items => {
         
-        for (let item of items)
+        console.log(" ssssss : ", items)
+        for (let item in items)
             {
-                console.log("item : ", item["categ_name"])
+                console.log("item : ", items[item])
                 let tr = document.createElement("tr")
 
-                for (var property in item) {
-                    if (!item.hasOwnProperty(property)) continue;
+                // for (var property in item) {
+                //     if (!item.hasOwnProperty(property)) continue;
                 
-                    let td = document.createElement("td")
-                let property_val = document.createTextNode(item[property]);
-                console.log(" property : ", property)
-                console.log(" property_val :", property_val)
+                let td_name = document.createElement("td")
+                let name = document.createTextNode(item);
+                console.log(" property : ", item)
+                console.log(" property_val :", items[item])
+                td_name.appendChild(name);
+                tr.appendChild(td_name);
+
+                let td = document.createElement("td")
+                let property_val = document.createTextNode(items[item]);
+                console.log(" property : ", item)
+                console.log(" property_val :", items[item])
                 td.appendChild(property_val);
                 tr.appendChild(td);
-                }
+                // }
 
                 console.dir(" tr : ", tr)
 
