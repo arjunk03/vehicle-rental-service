@@ -1,0 +1,46 @@
+* {
+
+    left: 0px;
+    top: 0px;
+    margin-left: 0px;
+
+}
+
+.navbar {
+    background-color: #48cae4;
+    height:25px;
+
+}
+
+a {
+
+    text-decoration: none;
+}
+
+.nav-items {
+    background-color: #80ed99;
+    margin-left: 5px;
+}
+
+.nav-sidebar {
+    display: flex;
+    flex-direction: column;
+    background-color: #b8c0ff;
+    width: 100px;
+    height: 100vh;
+}
+
+.sidebbar-items {
+    margin-left: 5px;
+    background-color: yellow;
+}
+
+.content {
+    position: absolute;
+    background-color: red;
+    margin-top: 33px;
+    margin-left:  100px;    
+    padding-top: 5px;
+    padding-left: 5px;
+
+}

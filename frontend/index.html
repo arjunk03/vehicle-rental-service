@@ -4,24 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>VRS - Vehicle Rental Service</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <ul>
+    <div class="navbar">
+        <a href="#" id="a-category" class="nav-items"> Category</a>
+        <a href="#" id="a-vehicle" class="nav-items">Vehicles</a>
+
+    </div>
+    <!-- <ul>
     <li ><a href="#" id="a-category" > vehicle category</a></li>
     <li><a href="#" id="a-vehicle">Vehicles</a></li>        
-    </ul> 
+    </ul>  -->
     
     
     <div id="dv-veh-category">
-        <div id="categ-sidebar">
-            <ul>
+        <div id="categ-sidebar" class="nav-sidebar">
+            <a href="#" id="a-add-categ" class="sidebbar-items">  Add Vehicles category</a>
+            <a href="#" id="a-list-categ" class="sidebbar-items">List Category</a>
+            <!-- <ul>
                 <li><a href="#" id="a-add-categ">  Add Vehicles category</a></li>
                 <li><a href="#" id="a-list-categ">List Category</a></li>
-            </ul>
+            </ul> -->
 
         </div>
-        <div id="dv-categ-area">
+        <div id="dv-categ-area" class="content">
             <div id="dv-add-categ">
+                <label>Add Category</label>
                 <div>
                     Category name
                     <input type="text" name="vehicle category" id="inpt-veh-catgry">
@@ -30,6 +39,7 @@
                     Description
                     <textarea name="veh-categry-description" id="txt-area-categry-description"></textarea>
                 </div>
+                <br/>
                 <button id="btn-add-ctgry"> Add Category</button>
             </div>
             <div id="dv-list-categ">
@@ -57,24 +67,29 @@
 
     </div>
 
-    <div id="dv-vehicles">
+    <div id="dv-vehicles" >
 
-        <div id="dv-veh-sidebar">
-            <ul>
-                <li><a href="#" id="a-add-veh">Add Vehicles</a></li>
-                <li><a href="#" id="a-list-veh">List Vehicles</a></li>
-            </ul>
+        <div id="dv-veh-sidebar"  class="nav-sidebar">
+            <a href="#" id="a-add-veh" class="sidebbar-items">Add Vehicles</a>
+            <a href="#" id="a-list-veh" class="sidebbar-items">List Vehicles</a>
+            <!-- <ul>
+                <li><a href="#" id="a-add-veh" class="sidebbar-items">Add Vehicles</a></li>
+                <li><a href="#" id="a-list-veh" class="sidebbar-items">List Vehicles</a></li>
+            </ul> -->
 
         </div>
-        <div id="dv-vehcateg-area">
+        <div id="dv-vehcateg-area"  class="content">
 
             <div id="dv-add-veh">
+                <label>Add Catefgory</label>
                 <div>
                     Vehicle name
                     <input type="text" name="vehicle " id="inpt-veh">
                 </div>
+                <br/>
                 <button> Add Category</button>
             </div>
+
             <div id="dv-list-veh">
                 List category
                 <div>
